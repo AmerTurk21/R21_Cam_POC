@@ -1,0 +1,146 @@
+﻿@model  System.Data.DataTable
+
+<h2>Users</h2>
+
+<table border="1" width="100%">
+    <tr>
+        <td colspan="10">
+            <h3>
+                All System Users
+            </h3>
+        </td>
+    </tr>
+    <tr>
+
+        @*<td>
+            <b>User ID</b>
+        </td>
+        <td>
+            <b> FTP Path
+        </td>*@
+
+        @*<td>
+            <b>  Notification ID</b>
+        </td>
+        <td>
+            <b>  Server Number</b>
+        </td>*@
+        <td>
+            <b>  First Name</b>
+        </td>
+        <td>
+            <b>  Last Name</b>
+        </td>
+        <td>
+            <b> Username</b>
+        </td>
+        <td>
+            <b>  Email</b>
+        </td>
+        @*<td>
+            <b>   Password</b>
+        </td>*@
+        <td>
+            <b>   Mobile</b>
+        </td>
+        @*<td>
+            <b>   Cloud Storage Path</b>
+        </td>*@
+        <td>
+            <b> Subscription Date</b>
+        </td>
+        <td>
+            <b>  Renewal Date</b>
+        </td>
+
+
+        <td>
+            <b>  Last Video Date</b>
+        </td>
+    </tr>
+    @try
+    {
+
+
+        for (int count = 0; count < Model.Rows.Count; count++)
+        {
+<tr>
+
+    @*<td>
+            @Model.Rows[count]["UserID"].ToString()
+        </td>
+        <td>
+
+            @Model.Rows[count]["FTP_Path"].ToString()
+        </td>*@
+
+    @*<td>
+
+            @Model.Rows[count]["User_Notification_ID"].ToString()
+        </td>
+        <td>
+
+            @Model.Rows[count]["Server_Number"].ToString()
+        </td>*@
+    <td>
+
+        @Model.Rows[count]["First_Name"].ToString()
+    </td>
+    <td>
+        @Model.Rows[count]["Last_Name"].ToString()
+    </td>
+    <td>
+
+        @Model.Rows[count]["Username"].ToString()
+    </td>
+    <td>
+
+        @Model.Rows[count]["Email"].ToString()
+    </td>
+    @*<td>
+
+            @Model.Rows[count]["User_Password"].ToString()
+        </td>*@
+    <td>
+
+        @Model.Rows[count]["Mobile"].ToString()
+    </td>
+    @*<td>
+
+            @Model.Rows[count]["Cloud_Storage_Path"].ToString()
+        </td>*@
+    <td>
+
+        @Model.Rows[count]["Date_Of_Subscription"].ToString()
+    </td>
+    <td>
+
+        @Model.Rows[count]["Last_Subscription_Renewal_Date"].ToString()
+    </td>
+
+    <td>
+        @Model.Rows[count]["Last_Video_Date"].ToString()
+    </td>
+    <td>
+        @Html.ActionLink("Get Videos", "DownloadVideos", "Home", new { UserID = @Model.Rows[count]["UserID"].ToString() }, null)
+    </td>
+
+    <td>
+        @Html.ActionLink("View User", "ViewUser" , "Home",new {UserID = @Model.Rows[count]["UserID"].ToString() },null)
+    </td>
+</tr>
+
+        }
+
+
+    }
+    catch (Exception e)
+    {
+        throw;
+    }
+    <tr>
+        <td colspan="10">
+            <hr />
+        </td>
+    </tr>
+</table>

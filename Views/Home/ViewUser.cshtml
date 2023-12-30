@@ -1,0 +1,120 @@
+﻿@model  System.Data.DataTable
+
+
+<h2>
+    @Model.Rows[0]["First_Name"].ToString() @Model.Rows[0]["Last_Name"].ToString()   Account
+</h2>
+
+@try
+{
+<table border="1" width="100%">
+    <tr>
+        @for (int count = 0; count < Model.Rows.Count; count++)
+        {
+            <td>
+                <div><b> ID </b></div>
+
+                <div>
+                    @Model.Rows[count]["UserID"].ToString()
+                </div>
+                <br />
+                <div><b> FTP Path </b></div>
+
+                <div>
+
+                    @Model.Rows[count]["FTP_Path"].ToString()
+                </div>
+                <br />
+                <div><b> Notification ID </b></div>
+
+                <div>
+
+                    @Model.Rows[count]["User_Notification_ID"].ToString()
+
+                </div>
+                <br />
+                <div> <b>Server Number</b></div>
+
+                <div>
+                    @Model.Rows[count]["Server_Number"].ToString()
+
+                </div>
+                <br />
+                <div> <b>First Name</b></div>
+
+                <div>
+                    @Model.Rows[count]["First_Name"].ToString()
+                </div>
+                <br />
+                <div> <b>Last Name</b></div>
+
+                <div>
+                    @Model.Rows[count]["Last_Name"].ToString()
+                </div>
+                <br />
+
+                <div><b>User Name</b></div>
+
+                <div>
+                    @Model.Rows[count]["Username"].ToString()
+                </div>
+                <br />
+            </td>
+            <td>    
+                <div><b> Email</b></div>
+
+                <div>
+
+                    @Model.Rows[count]["Email"].ToString()
+
+                </div>
+                <br />
+
+                <div><b> Password</b></div>
+
+                <div>
+                    @Model.Rows[count]["User_Password"].ToString()
+                </div>
+                <br />
+
+                <div><b> Mobile</b></div>
+
+                <div>
+                    @Model.Rows[count]["Mobile"].ToString()
+                </div>
+                <br />
+                <div><b> Storage Path</b></div>
+
+                <div>
+                    @Model.Rows[count]["Cloud_Storage_Path"].ToString()
+                </div>
+                <br />
+                <div><b> Date Of Subscription</b></div>
+
+                <div>
+                    @Model.Rows[count]["Date_Of_Subscription"].ToString()
+                </div>
+                <br />
+                <div><b> Renewal Date</b></div>
+
+                <div>
+                    @Model.Rows[count]["Last_Subscription_Renewal_Date"].ToString()
+                </div>
+                <br />
+                <div><b> Last Uploaded Video</b></div>
+
+                <div>
+                    @Model.Rows[count]["Last_Video_Date"].ToString()
+                </div>
+                <br />
+            </td>
+        }
+    </tr>
+</table>
+
+}
+catch (Exception e)
+{
+    throw;
+}
+

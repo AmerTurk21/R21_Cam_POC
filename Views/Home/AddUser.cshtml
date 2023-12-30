@@ -1,0 +1,144 @@
+﻿@model AiCamzy.Models.UserRegistration
+@{
+    ViewBag.Title = "Register";
+}
+<style>
+    input[type="text"] {
+        width: 350px;
+        margin-bottom:5px;
+        border-color: lightblue;
+        border: 1px solid gray;
+    }
+
+</style>
+<h2>AddUser</h2>
+
+@using (Html.BeginForm("Register", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+
+
+
+
+    <h4>Create a new user.</h4>
+    <hr />
+    @Html.ValidationSummary()
+    @*<div >
+            Used ID
+            <div >
+                @Html.TextBoxFor(m => m.UserID)
+            </div>
+        </div>*@
+    <div>
+        First Name
+        <div>
+            @Html.TextBoxFor(m => m.First_Name)
+        </div>
+    </div>
+    <div>
+        Last Name
+        <div>
+            @Html.TextBoxFor(m => m.Last_Name)
+        </div>
+    </div>
+    <div>
+        Username
+        <div>
+            @Html.TextBoxFor(m => m.UserName)
+        </div>
+    </div>
+    <div>
+        User Email
+        <div>
+            @Html.TextBoxFor(m => m.Email)
+        </div>
+    </div>
+    <div>
+        User Password
+        <div>
+            @Html.TextBoxFor(m => m.User_Password)
+        </div>
+    </div>
+    <div>
+        Mobile
+        <div>
+            @Html.TextBoxFor(m => m.Mobile)
+        </div>
+    </div>
+    <div>
+        FTP Path
+        <div>
+            @Html.TextBoxFor(m => m.FTP_Path)
+        </div>
+    </div>
+    <div>
+        FTP Pass
+        <div>
+            @Html.TextBoxFor(m => m.FTP_Pass)
+        </div>
+    </div>
+    <div>
+        FTP User
+        <div>
+            @Html.TextBoxFor(m => m.FTP_User)
+        </div>
+    </div>
+    <div>
+        Date Of Subscription
+        <div>
+            @Html.TextBoxFor(m => m.Date_Of_Subscription)
+        </div>
+    </div>
+    <div>
+        User Notification ID
+        <div>
+            @Html.TextBoxFor(m => m.User_Notification_ID)
+        </div>
+    </div>
+    <div>
+        Server Number
+        <div>
+            @Html.TextBoxFor(m => m.Server_Number)
+        </div>
+    </div>
+
+    <div>
+        Cloud Storage Path
+        <div>
+            @Html.TextBoxFor(m => m.Cloud_Storage_Path)
+        </div>
+    </div>
+    <div>
+        Local Directory
+        <div>
+            @Html.TextBoxFor(m => m.Local_Dir)            
+        </div>
+    </div>
+    <div>
+        Renewal Date
+        <div>
+            @Html.TextBoxFor(m => m.Last_Subscription_Renewal_Date)
+        </div>
+    </div>
+    <div>
+        Conversion Path
+        <div>
+            @Html.TextBoxFor(m => m.Conversion_Path)
+        </div>
+    </div>
+    <div>
+        Local Big Path
+        <div>
+            @Html.TextBoxFor(m => m.Big_Merged_Path)
+        </div>
+    </div>
+
+
+    <br/>
+    <div style="float:left">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-primary btn-lg" value="Register" />
+          
+        </div>
+    </div>
+    <br/>
+}
